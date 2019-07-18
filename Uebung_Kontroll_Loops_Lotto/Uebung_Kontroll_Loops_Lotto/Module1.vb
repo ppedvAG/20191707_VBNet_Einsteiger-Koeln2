@@ -1,11 +1,13 @@
-﻿Module Module1
+﻿Option Explicit On
+Option Strict On
+Module Module1
 
     Sub Main()
 Line1:
         Dim generator As New Random ' Generator-Instanz der Klasse Random erzeugen
         Dim ZufallsZahlenArray(2) As Integer ' Zufallszahlen-Array mit definierter Länge 2 (3 Elemente) 
         Dim ZufallsZahl As Integer ' Integer-Variable für erweiterten Zugriff über Gültigkeitsbereiche hinaus
-        Dim Zähler As Integer ' Zähler-Variable für richtig geratene Zahlen
+        Dim Zähler As Integer = 0 ' Zähler-Variable für richtig geratene Zahlen
         Dim Indexer As Integer ' Laufvariable zum Durchlaufen des Zufallszahlen-Arrays
 
         ' Benutzereingaben abfangen
