@@ -1,6 +1,7 @@
 ﻿Option Strict On
 Option Explicit On
 Public MustInherit Class Prüfgerät
+    Implements IPrüfbar
     ' Interne Variablen der Klasse, von außen nur über Get/Set lesbar (schreibbar)
 #Region "Felder"
 
@@ -26,10 +27,14 @@ Public MustInherit Class Prüfgerät
     End Sub
 #End Region
 
-    Public Overridable Function Prüfen() As Boolean
+    Public Overridable Function Prüfen() As Boolean Implements IPrüfbar.Prüfen
         ' Operationen Prüfungsberechnungen, liefert zurück: Prüfung gut o. schlecht
 
         Return True
+    End Function
+
+    Public Function Rechnen() As Integer Implements IPrüfbar.Rechnen
+        Return 1
     End Function
 
     Public Overridable Function Anschalten() As Boolean
